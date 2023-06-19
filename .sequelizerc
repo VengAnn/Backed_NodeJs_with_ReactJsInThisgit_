@@ -1,0 +1,30 @@
+// .sequelizerc 
+//make to config error with sequelize
+//link on visite on website: https://sequelize.org/docs/v6/other-topics/migrations/
+
+//fix error
+// Lỗi "npm ERR! ERESOLVE could not resolve" xảy ra khi npm không thể 
+//giải quyết được các phụ thuộc của gói sequelize với các phiên bản khác nhau của babel-loader và webpack.
+//npm install --save-dev sequelize-cli@6.2.0        error(change commad) =>npm install --save-dev sequelize-cli@6.2.0 --force
+//npx sequelize-cli init
+// (command to fix error with npx sequelize-cli intit) npm install --save sequelize --legacy-peer-deps
+//node_modules/.bin/sequelize init 
+
+
+//link : https://sequelize.org/docs/v6/other-topics/migrations/
+//last to run npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+//npm install --save mysql2@2.2.5 --force
+//npx sequelize-cli seed:generate --name demo-user
+
+
+//Check all process with port cmd: netstat -ano | findstr :8080
+
+
+const path = require('path');
+
+module.exports = {
+    'config': path.resolve('./src/config', 'config.json'),
+    'models-path': path.resolve('./src', 'models'),
+    'seeders-path': path.resolve('./src', 'seeders'),
+    'migrations-path': path.resolve('./src', 'migrations')
+};
