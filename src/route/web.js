@@ -11,9 +11,11 @@ let initWebRouters = (app) => {
 
     router.get('/', homeController.getHomePage);
     router.get('/about', homeController.getAboutPage);
-    router.get('/vengann', (req, res) => {
-        return res.send("Hello From Veng Ann")
-    });
+    router.get('/crud', homeController.getCRUD);
+
+    // router.get('/vengann', (req, res) => {
+    //     return res.send("Hello From Veng Ann")
+    // });
 
     return app.use("/", router);
 }
