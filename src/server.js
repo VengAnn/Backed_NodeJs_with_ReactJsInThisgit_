@@ -6,12 +6,15 @@ import viewEngine from "./config/viewEngine";
 import initWebRoutes from "./route/web";
 import connectDB from "./config/connectDB";
 
+
 require('dotenv').config();
 
 let app = express();
 
-// Cấu hình app và các middleware khác //config app
+// Cấu hình app và các middleware khác
 viewEngine(app);
+app.use(express.json()); // Middleware xử lý JSON body in file Hmtl
+app.use(express.urlencoded({ extended: false })); // Middleware xử lý URL-encoded body
 initWebRoutes(app);
 
 connectDB();

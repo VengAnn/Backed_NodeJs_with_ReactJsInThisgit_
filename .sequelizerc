@@ -22,6 +22,15 @@
 //npx sequelize-cli db:seed:all
 
 
+//step to install bcryptjs
+//npm install --save bcryptjs@5.1.0 if error 
+// run again 
+//npm install --save bcryptjs@2.4.3 --force
+
+
+
+
+
 //Check all process with port cmd: netstat -ano | findstr :8080
 
 
