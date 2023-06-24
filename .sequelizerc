@@ -1,3 +1,8 @@
+
+//This version nodejs use in project -v
+//v16.19.0
+
+
 // .sequelizerc 
 //make to config error with sequelize
 //link on visite on website: https://sequelize.org/docs/v6/other-topics/migrations/
