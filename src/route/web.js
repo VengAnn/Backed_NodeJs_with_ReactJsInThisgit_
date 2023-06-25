@@ -2,6 +2,8 @@ import express from "express";
 import res from "express/lib/response";
 import homeController from "../controllers/homecontrollers";
 import { HostNotFoundError } from "sequelize";
+import userController from "../controllers/userController";
+
 
 // const express = require('express');
 // const { Response } = require('express');
@@ -18,6 +20,8 @@ let initWebRouters = (app) => {
     router.get('/edit-crud', homeController.getEditCRUD);
     router.post('/put-crud', homeController.putCRUD);
     router.get('/delete-crud', homeController.deleteCRUD);
+
+    router.post('/api/login', userController.handleLogin)
 
     // router.get('/vengann', (req, res) => {
     //     return res.send("Hello From Veng Ann")
