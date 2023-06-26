@@ -32,6 +32,9 @@
 // run again 
 //npm install --save bcryptjs@2.4.3 --force
 
+//step 
+//npm install cors@2.8.5 --force
+
 
 
 

@@ -5,12 +5,14 @@ import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine";
 import initWebRoutes from "./route/web";
 import connectDB from "./config/connectDB";
-
+import cors from 'cors';
 
 require('dotenv').config();
 
 let app = express();
+app.use(cors({ credentials: true, origin: true }));
 
+//cofig app
 // Cấu hình app và các middleware khác
 viewEngine(app);
 app.use(express.json()); // Middleware xử lý JSON body in file Hmtl
