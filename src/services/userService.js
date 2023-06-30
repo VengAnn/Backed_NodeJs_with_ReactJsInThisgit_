@@ -10,7 +10,6 @@ let handleUserLogin = (email, password) => {
             let isExist = await checkUserEmail(email);
             if (isExist) {
                 //user already exist
-
                 let user = await db.User.findOne({
                     // attributes: {
                     //     include: ['email', 'roleId'], // define columns that you want to show
@@ -78,7 +77,7 @@ let getAllUsers = (userId) => {
     return new Promise(async (resolve, reject) => {
         try {
             let users = '';
-            if (userId == 'ALL') {
+            if (userId === 'ALL') {
                 users = db.User.findAll({
                     attributes: {
                         exclude: ['password']
@@ -119,10 +118,10 @@ let createNewUser = (data) => { //varrible data value from client;
         try {
             //check email is exist ??tồn tại hay không
             let check = await checkUserEmail(data.email)
-            if (check == true) {
+            if (check === true) {
                 resolve({
                     errcode: 1,
-                    message: 'Your email is already in used, please try another email!'
+                    errMessage: 'Your email is already in used, please try another email!'
                 })
             }
             else {
